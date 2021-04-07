@@ -1,0 +1,11 @@
+#header {
+  background-color: lightblue;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+  height: 70px;
+}
+
+#wrapper {
+  max-width: 800px;
+  margin: 0 auto 1em auto;
+  padding: 5px;
+}
