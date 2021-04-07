@@ -1,0 +1,53 @@
+<h2>Calculate your Zoom-Carbon-Footprint</h2>
+<div class="row">
+  <form class="col s12">
+
+    <span class="input-field-text">How many hours do you spend per week on Zoom without Webcam?</span>
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="hours_on_zoom" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.timeOnZoom">
+        <label for="hours_on_zoom">Hours spent on Zoom without Webcam</label>
+      </div>
+    </div>
+
+    <span class="input-field-text">Do you use your Webcam during Zoom-calls?</span>
+    <div class="row">
+      <div class="input-field col s8">
+        <p>
+          <label class="radio-buttons">
+            <input class="with-gap" name="group1" type="radio" checked [(ngModel)]="data.usingWebcam"/>
+            <span>No</span>
+          </label>
+          <label>
+            <input class="with-gap" name="group1" type="radio"  />
+            <span>Yes</span>
+          </label>
+        </p>
+      </div>
+    </div>
+
+    <span class="input-field-text">How many hours do you spend per week on Zoom with your Webcam on?</span>
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="webcam_hours_on_zoom" name="webcam_hours_on_zoom" type="number" class="validate" [(ngModel)]="data.timeOnZoomWithWebcam">
+        <label for="webcam_hours_on_zoom">Hours spent on Zoom with Webcam</label>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div>
+  Using Webcam: {{ data.usingWebcam }}
+</div>
+
+<!--
+EXAMPLE TEXT INPUT FIELD. place it inside <form> tag
+
+    <span class="input-field-text">How many hours do you spend per week on Zoom?</span>
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="hours_on_zoom" type="number" class="validate">
+        <label for="hours_on_zoom">Hours spent on Zoom</label>
+      </div>
+    </div>
+-->
