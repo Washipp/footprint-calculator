@@ -4,6 +4,7 @@ export interface CalculatorData {
   timeOnZoom: number;
   usingWebcam: boolean;
   timeOnZoomWithWebcam: number;
+  // TODO: add the necessary fields
 }
 
 @Injectable({
@@ -15,15 +16,16 @@ export class CalculatorService {
 
   createEmptyData(): CalculatorData {
     return {
-      timeOnZoom: 0,
+      timeOnZoom: undefined,
       usingWebcam: false,
-      timeOnZoomWithWebcam: 0
+      timeOnZoomWithWebcam: undefined
       // TODO: add the other fields
     };
   }
 
-  calculateFootprint(): number {
-    // TODO: create calculation
-    return 0;
+  calculateFootprint(data: CalculatorData): number {
+    return Math.random() * (data.timeOnZoom - data.timeOnZoomWithWebcam + 1) + data.timeOnZoomWithWebcam;
+    // TODO: insert formula to calculate the footprint
+    // return 0;
   }
 }
