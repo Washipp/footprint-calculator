@@ -1,15 +1,36 @@
 <h2>Calculate your Zoom-Carbon-Footprint</h2>
 <div class="row">
   <form class="col s12">
+    <div>Input the data according to your average usage.
+      You can calculate this for every lecture or as an average over a week.
+      Note that this provides a lower-bound of your usage and some factors aren't taken into consideration.</div>
 
-    <span class="input-field-text">How many hours do you spend per week on Zoom without Webcam?</span>
+    <span class="input-field-text">Hours on Zoom watching Screenshare?</span>
     <div class="row">
       <div class="input-field col s12">
-        <input id="hours_on_zoom" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.timeOnZoom">
-        <label for="hours_on_zoom">Hours spent on Zoom without Webcam</label>
+        <input id="hours_on_zoom" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.screenShareTime">
+        <label for="hours_on_zoom">Hours on Zoom watching Screenshare</label>
       </div>
     </div>
 
+    <span class="input-field-text">Hours on Zoom listening?</span>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="hours_on_zoom_listening" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.listeningTime">
+        <label for="hours_on_zoom_listening">Hours on Zoom Listening</label>
+      </div>
+    </div>
+
+    <span class="input-field-text">Hours on Zoom Webcam?</span>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="hours_on_zoom_webcam" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.webcamTime">
+        <label for="hours_on_zoom_webcam">Hours on Zoom Webcam</label>
+      </div>
+    </div>
+
+
+    <!--
     <span class="input-field-text">Do you use your Webcam during Zoom-calls?</span>
     <div class="row">
       <div class="input-field col s12">
@@ -25,7 +46,7 @@
         </p>
       </div>
     </div>
-
+-->
     <div [hidden]="!data.usingWebcam">
     <span class="input-field-text">How many hours do you spend per week on Zoom with your Webcam on?</span>
     <div class="row">
