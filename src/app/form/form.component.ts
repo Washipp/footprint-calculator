@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CalculatorData, CalculatorService} from '../calculator.service';
+import {ZoomData, CalculatorService} from '../calculator.service';
 
 @Component({
   selector: 'app-form',
@@ -8,17 +8,17 @@ import {CalculatorData, CalculatorService} from '../calculator.service';
 })
 export class FormComponent implements OnInit {
 
-  data: CalculatorData;
+  data: ZoomData;
   footprint: number;
 
   constructor(private cService: CalculatorService) { }
 
   ngOnInit(): void {
-     this.data = this.cService.createEmptyData();
+     this.data = this.cService.createEmptyZoomData();
   }
 
   calculate(): void {
-    this.footprint = this.cService.calculateFootprint(this.data);
+    this.footprint = this.cService.calculateZoomFootprint(this.data);
   }
 
   improve(): void {

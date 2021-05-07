@@ -1,0 +1,39 @@
+<h3>Computer Emissions</h3>
+<div class="row">
+  <form class="col s12">
+    <p>explanation text here
+    </p>
+
+    <span class="input-field-text">What device are you using?</span>
+    <div class="row">
+      <div class="input-field col s12">
+        <select [(ngModel)]="selectedDevice" name="device">
+          <option value="" disabled selected>Choose your device</option>
+          <option *ngFor = "let device of devices" [ngValue]="device" (focusout)="save()">{{device.name}}</option>
+        </select>
+      </div>
+    </div>
+
+    <span class="input-field-text">Usage time</span>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="usage_hour" name="usage_time" type="number" class="validate" [(ngModel)]="data.usage" (focusout)="save()">
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<hr>
+<div class="row">
+  <div class="col s12">
+    <a [routerLink]="['/zoom']" (click)="save()"><button class="btn grey darken-2" style="margin-right: 10px">Back</button></a>
+    <a [routerLink]="['/result']" (click)="save()">
+      <button class="btn grey darken-2" style="margin-right: 10px">
+        Continue to Result
+      </button>
+    </a>
+    <button class="btn grey darken-2" (click)="reset()">Reset Values</button>
+  </div>
+</div>
+

@@ -1,0 +1,36 @@
+<h3>Result</h3>
+
+<div class="row">
+  <div class="col s12">
+    <div class="card grey lighten-1">
+      <div class="card-content white-text">
+        <span class="card-title">Your total carbon footprint (in kgCO2):</span>
+        <p>{{ footprint | number }} kgCO2</p>
+      </div>
+      <hr>
+      <div class="card-content white-text">
+        <span class="card-title">Your Zoom Carbon footprint (in kgCO2):</span>
+        <p>{{ zoomFprint | number}} kgCO2</p>
+      </div>
+      <div class="card-content white-text">
+        <span class="card-title">Your Zoom Computer Emissions (in kgCO2):</span>
+        <p>{{ cDataFprint | number }} kgCO2</p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col s12">
+    <a [routerLink]="['/computer_emissions']">
+      <button class="btn grey darken-2" style="margin-right: 10px">
+        Back
+      </button>
+    </a>
+    <a [routerLink]="['/zoom']" (click)="resetAll()">
+      <button class="btn grey darken-2" style="margin-right: 10px">
+        Start new Calculation
+      </button>
+    </a>
+  </div>
+</div>

@@ -1,9 +1,9 @@
-<h3>Calculate your Zoom-Carbon-Footprint</h3>
+<h3>Zoom-Carbon-Footprint</h3>
 <div class="row">
   <form class="col s12">
     <p>Input the data according to your average usage.
       You can calculate this for every lecture or as an average over a week.
-      </p>
+    </p>
     <p>The input values can overlap, meaning if you have 1 hour of screenshare and listening, you input 1 hour in the first and 1 hour in the second field.</p>
     <p>Note that this provides a lower-bound of your usage and some factors aren't taken into consideration.
       (such as video quality, we always assume its the lowest.)</p>
@@ -11,24 +11,21 @@
     <span class="input-field-text">Listening or Talking Time</span>
     <div class="row">
       <div class="input-field col s12">
-        <input id="hours_on_zoom_listening" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.listeningTime">
-        <label for="hours_on_zoom_listening">Hours on Zoom Listening</label>
+        <input id="hours_on_zoom_listening" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.listeningTime" (focusout)="save()">
       </div>
     </div>
 
     <span class="input-field-text">Screenshare Time</span>
     <div class="row">
       <div class="input-field col s12">
-        <input id="hours_on_zoom" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.screenShareTime">
-        <label for="hours_on_zoom">Hours on Zoom watching Screenshare</label>
+        <input id="hours_on_zoom" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.screenShareTime" (focusout)="save()">
       </div>
     </div>
 
     <span class="input-field-text">Webcam usage time</span>
     <div class="row">
       <div class="input-field col s12">
-        <input id="hours_on_zoom_webcam" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.webcamTime">
-        <label for="hours_on_zoom_webcam">Hours on Zoom using your own Webcam</label>
+        <input id="hours_on_zoom_webcam" name="hours_on_zoom" type="number" class="validate" [(ngModel)]="data.webcamTime" (focusout)="save()">
       </div>
     </div>
 
@@ -49,13 +46,34 @@
         </p>
       </div>
     </div>
--->
 
+    <div [hidden]="!data.usingWebcam">
+      <span class="input-field-text">How many hours do you spend per week on Zoom with your Webcam on?</span>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="webcam_hours_on_zoom" name="webcam_hours_on_zoom" type="number" class="validate" [(ngModel)]="data.timeOnZoomWithWebcam">
+          <label for="webcam_hours_on_zoom">Hours spent on Zoom with Webcam</label>
+         <span class="helper-text" data-error="Input is not a number" data-success="">Only input whole numbers</span>
+        </div>
+      </div>
+    </div>-->
     <!-- TODO: add the input fields according to 'CalculatorData' -->
   </form>
 </div>
 
 <hr>
+<div class="row">
+  <div class="col s12">
+    <a [routerLink]="['/computer_emissions']" (click)="save()">
+      <button class="btn grey darken-2" style="margin-right: 10px">
+      Continue to Computer Emissions
+      </button>
+    </a>
+    <button class="btn grey darken-2" (click)="reset()">Reset Values</button>
+  </div>
+</div>
+
+<!--
 <div class="row">
   <div class="col s12">
     <div class="card grey lighten-1">
@@ -65,11 +83,10 @@
       </div>
       <div class="card-action">
         <button class="btn grey darken-2" (click)="calculate()" style="margin-right: 10px">Calculate</button>
-        <!--<button class="btn blue lighten-2" (click)="improve()">Improve Footprint</button>-->
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!--
 EXAMPLE TEXT INPUT FIELD. place it inside <form> tag

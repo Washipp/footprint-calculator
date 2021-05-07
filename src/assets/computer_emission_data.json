@@ -1,0 +1,111 @@
+[
+    {
+      "id" :  1,
+      "device_type" : "tablet",
+      "name" :  "iPad Pro 11 (2nd generation)",
+      "release_year" : 2020,
+      "manufacturer" : "Apple",
+      "lifeTimeEmission" : 119,
+      "lifespan" : 3
+    },
+    {
+      "id" :  2,
+      "device_type" : "laptop",
+      "name" :  "MacBook Pro 13-inch, M1",
+      "release_year" : 2020,
+      "manufacturer" : "Apple",
+      "lifeTimeEmission" : 185,
+      "lifespan" : 3
+    },
+    {
+      "id" : 3,
+      "device_type" : "phone",
+      "name" :  "iPhone 12",
+      "release_year" : 2020,
+      "manufacturer" : "Apple",
+      "lifeTimeEmission" : 70,
+      "lifespan" : 3
+    },
+    {
+      "id" :  4,
+      "device_type" : "laptop",
+      "name" :  "HP ProBook 430 G8",
+      "release_year" : 2020,
+      "manufacturer" : "HP",
+      "lifeTimeEmission" : 260,
+      "lifespan" : 4
+    },
+    {
+      "id" :  5,
+      "device_type" : "desktop pc",
+      "name" :  "HP ProDesk 400 G6 MT",
+      "release_year" : 2019,
+      "manufacturer" : "HP",
+      "lifeTimeEmission" : 505,
+      "lifespan" : 5
+    },
+    {
+      "id" :  6,
+      "device_type" : "phone",
+      "name" :  "FAIRPHONE 3",
+      "release_year" : 2020,
+      "manufacturer" : "Fairphone",
+      "lifeTimeEmission" : 39.5,
+      "lifespan" : 3
+    },
+    {
+      "id" :  7,
+      "device_type" : "monitor",
+      "name" : "DELL P2720DC Monitor",
+      "release_year" : 2019,
+      "manufacturer" : "Dell",
+      "lifeTimeEmission" : 477,
+      "lifespan" : 6
+    },
+    {
+      "id" :  8,
+      "device_type" : "laptop",
+      "name" :  "Dell XPS 13 9300",
+      "release_year" : 2020,
+      "manufacturer" : "Dell",
+      "lifeTimeEmission" : 252,
+      "lifespan" : 4
+    },
+    {
+      "id" :  9,
+      "device_type" : "laptop",
+      "name" :  "Lenovo ThinkPad E15 2nd Gen AMD",
+      "release_year" : 2020,
+      "manufacturer" : "Lenovo",
+      "lifeTimeEmission" : 231,
+      "lifespan" : 4
+    },
+    {
+      "id" :  10,
+      "device_type" : "tablet",
+      "name" :  "Lenovo Tab P11",
+      "release_year" : 2020,
+      "manufacturer" : "Lenovo",
+      "lifeTimeEmission" : 58,
+      "lifespan" : 3
+    },
+    {
+      "id" :  11,
+      "device_type" : "Gaming dektop pc",
+      "name" :  "Lenovo Legion T5 Tower",
+      "release_year" : 2020,
+      "manufacturer" : "Lenovo",
+      "lifeTimeEmission" : 579,
+      "lifespan" : 3
+    },
+    {
+      "id" :  12,
+      "device_type" : "gaming laptop",
+      "name" :  "Legion 5 15”",
+      "release_year" : 2020,
+      "manufacturer" : "Lenovo",
+      "lifeTimeEmission" : 300,
+      "lifespan" : 3
+    }
+  ]
+
