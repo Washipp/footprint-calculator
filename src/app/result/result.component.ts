@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CalculatorService, CEmissionData, ZoomData} from '../calculator.service';
+import {Device} from '../devices.service';
 
 @Component({
   selector: 'app-result',
@@ -13,6 +14,7 @@ export class ResultComponent implements OnInit {
   zoomFprint: number;
   cData: CEmissionData;
   cDataFprint: number;
+  selectedDevices: Array<Device> = [];
 
   constructor(private cService: CalculatorService) { }
 
@@ -20,7 +22,17 @@ export class ResultComponent implements OnInit {
     this.loadData();
     this.zoomFprint = this.cService.calculateZoomFootprint(this.zoomData);
     this.cDataFprint = this.cService.calculateComputerEmissions(this.cData);
-    this.footprint = this.zoomFprint + this.cDataFprint;
+    this.footprint = 0;
+    for (const dev of this.selectedDevices) {
+      const cData = this.cService.createEmptyCEmissionData();
+      cData.lifeTimeEmission = dev.lifeTimeEmission;
+      cData.usage = dev.usageTime;
+      cData.lifeSpan = dev.lifespan;
+      const e = this.cService.calculateComputerEmissions(cData);
+      dev.emissions = e;
+      this.footprint += e;
+    }
+    this.footprint += this.zoomFprint;
   }
 
   loadData(): void {
@@ -35,6 +47,9 @@ export class ResultComponent implements OnInit {
     cData.lifeTimeEmission = Number(localStorage.getItem('lifeTimeEmission'));
     cData.usage = Number(localStorage.getItem('usage'));
     this.cData = cData;
+
+    const jsonData = localStorage.getItem('selectedDevices');
+    this.selectedDevices =  JSON.parse(jsonData);
   }
 
   resetAll(): void {

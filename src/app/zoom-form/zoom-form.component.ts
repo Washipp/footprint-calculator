@@ -17,7 +17,6 @@ export class ZoomFormComponent implements OnInit {
   }
 
   save(): void {
-    console.log('save called');
     localStorage.setItem('screenShareTime', String(this.data.screenShareTime));
     localStorage.setItem('webcamTime', String(this.data.webcamTime));
     localStorage.setItem('listeningTime', String(this.data.listeningTime));
@@ -28,7 +27,6 @@ export class ZoomFormComponent implements OnInit {
       listeningTime: undefined,
       screenShareTime: undefined,
       webcamTime: undefined
-      // TODO: add the other fields
     };
     data.listeningTime = localStorage.getItem('listeningTime');
     data.screenShareTime = localStorage.getItem('screenShareTime');

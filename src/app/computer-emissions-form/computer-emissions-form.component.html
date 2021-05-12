@@ -1,27 +1,78 @@
 <h3>Computer Emissions</h3>
 <div class="row">
+  <p>
+    Select the <b>most fitting</b> device that you used for the Zoom meetings and input how long you have used this device.
+    If you leave it will calculate the emissions without the device. Again provide the usage time in hours. Round up or down if necessary.
+  </p>
+  <p class="valign-wrapper">
+    <i class="material-icons">info_outline</i>Note that in order to receive a useful result the time interval has to be the same as for the Zoom part.
+  </p>
+  <hr>
   <form class="col s12">
-    <p>explanation text here
-    </p>
-
-    <span class="input-field-text">What device are you using?</span>
+    <span class="input-field-text">Filter Devices</span>
     <div class="row">
-      <div class="input-field col s12">
-        <select [(ngModel)]="selectedDevice" name="device">
-          <option value="" disabled selected>Choose your device</option>
-          <option *ngFor = "let device of devices" [ngValue]="device" (focusout)="save()">{{device.name}}</option>
-        </select>
+
+      <div class="input-field col s4">
+        <span class="input-field-text">Device Type</span>
+        <div *ngFor="let dev of deviceTypes">
+          <label class="radio-buttons red-text">
+            <input class="with-gap" name="deviceType" type="radio"
+                   [value]="dev" [(ngModel)]="selectedType" (ngModelChange)="filterDevices()" />
+            <span>{{ dev }}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="input-field col s4">
+        <span class="input-field-text">Manufacturer</span>
+        <div *ngFor="let man of manufacturers">
+          <label class="radio-buttons red-text">
+            <input class="with-gap" name="manufacturer" type="radio"
+                   [value]="man" [(ngModel)]="selectedManufacturer" (ngModelChange)="filterDevices()" />
+            <span>{{ man }}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="input-field col s4">
+        <span class="input-field-text">Device</span>
+        <div *ngFor="let dev of filteredDevices">
+          <label class="radio-buttons red-text">
+            <input class="with-gap" name="devices" type="radio"
+                   [value]="dev" [(ngModel)]="selectedDevice" />
+            <span>{{ dev.name }}</span>
+          </label>
+        </div>
       </div>
     </div>
 
-    <span class="input-field-text">Usage time</span>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="usage_hour" name="usage_time" type="number" class="validate" [(ngModel)]="data.usage" (focusout)="save()">
+
+    <div class="row valign-wrapper">
+      <div class="col s8">
+        <div>Device: {{selectedDevice.name}}</div>
+      </div>
+
+      <div class="input-field col s3">
+        Usage Time:
+        <input id="usage_hour" name="usage_time" type="number" class="validate" [(ngModel)]="usageTime">
+      </div>
+      <div class="col s1">
+        <button class="btn grey darken-2" (click)="addDevice()"><i class="material-icons">add</i></button>
       </div>
     </div>
-
   </form>
+
+  <div class="row">
+    <div class="col s12"><span class="input-field-text">Selected Devices:</span></div>
+    <div class="col s6"><b>Name</b></div>
+    <div class="col s4"><b>Usage Time</b></div>
+    <div class="col s2"><b>Remove</b></div>
+    <div *ngFor="let dev of selectedDevices">
+      <div class="col s6">{{dev.name}}</div>
+      <div class="col s4">{{dev.usageTime}}</div>
+      <div class="col s2"><i class="material-icons" (click)="removeDevice(dev.name)" style="cursor: pointer">clear</i></div>
+    </div>
+  </div>
 </div>
 
 <hr>

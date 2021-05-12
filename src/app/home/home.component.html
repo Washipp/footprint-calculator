@@ -1,3 +1,7 @@
 <h3>Calculate your Carbon-Footprint</h3>
-<p>Input the data as precisely as possible and get a lower bound of your Carbon-Footprint!</p>
-<a [routerLink]="['/zoom']"><button class="btn grey darken-2">Start Calculation</button></a>
+<p>Welcome to this small tool <b>ECOESC - Estimate of CO2 Emissions of a Student during Covid-19</b>. Input the data as precisely as possible and get a lower bound of your Carbon-Footprint!</p>
+<p>We, a small team of students, wanted to know how much of an impact the Covid-19 pandemic has had.
+  Due to its complexity we only give a lower bound meaning we let the impact of other factors (traveling, eating...) be calculated by other tools.
+  Ideally you make your estimates <b>for one week</b>, but it can be used for any time interval.</p>
+<p>Its calculations are based on a paper written for the course 227-0803-00L at ETH. It will be linked here once the final version is ready.</p>
+<a [routerLink]="['/zoom']" (click)="resetAll()"><button class="btn grey darken-2">Start Calculation</button></a>

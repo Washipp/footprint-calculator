@@ -10,6 +10,8 @@ export interface Device {
   manufacturer: string;
   lifeTimeEmission: number;
   lifespan: number;
+  usageTime?: number;
+  emissions?: number;
 }
 @Injectable({
   providedIn: 'root'

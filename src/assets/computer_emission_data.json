@@ -1,7 +1,7 @@
 [
     {
       "id" :  1,
-      "device_type" : "tablet",
+      "deviceType" : "Tablet",
       "name" :  "iPad Pro 11 (2nd generation)",
       "release_year" : 2020,
       "manufacturer" : "Apple",
@@ -10,7 +10,7 @@
     },
     {
       "id" :  2,
-      "device_type" : "laptop",
+      "deviceType" : "Laptop",
       "name" :  "MacBook Pro 13-inch, M1",
       "release_year" : 2020,
       "manufacturer" : "Apple",
@@ -19,7 +19,7 @@
     },
     {
       "id" : 3,
-      "device_type" : "phone",
+      "deviceType" : "Phone",
       "name" :  "iPhone 12",
       "release_year" : 2020,
       "manufacturer" : "Apple",
@@ -28,7 +28,7 @@
     },
     {
       "id" :  4,
-      "device_type" : "laptop",
+      "deviceType" : "Laptop",
       "name" :  "HP ProBook 430 G8",
       "release_year" : 2020,
       "manufacturer" : "HP",
@@ -37,7 +37,7 @@
     },
     {
       "id" :  5,
-      "device_type" : "desktop pc",
+      "deviceType" : "Desktop PC",
       "name" :  "HP ProDesk 400 G6 MT",
       "release_year" : 2019,
       "manufacturer" : "HP",
@@ -46,7 +46,7 @@
     },
     {
       "id" :  6,
-      "device_type" : "phone",
+      "deviceType" : "Phone",
       "name" :  "FAIRPHONE 3",
       "release_year" : 2020,
       "manufacturer" : "Fairphone",
@@ -55,7 +55,7 @@
     },
     {
       "id" :  7,
-      "device_type" : "monitor",
+      "deviceType" : "Monitor",
       "name" : "DELL P2720DC Monitor",
       "release_year" : 2019,
       "manufacturer" : "Dell",
@@ -64,7 +64,7 @@
     },
     {
       "id" :  8,
-      "device_type" : "laptop",
+      "deviceType" : "Laptop",
       "name" :  "Dell XPS 13 9300",
       "release_year" : 2020,
       "manufacturer" : "Dell",
@@ -73,7 +73,7 @@
     },
     {
       "id" :  9,
-      "device_type" : "laptop",
+      "deviceType" : "Laptop",
       "name" :  "Lenovo ThinkPad E15 2nd Gen AMD",
       "release_year" : 2020,
       "manufacturer" : "Lenovo",
@@ -82,7 +82,7 @@
     },
     {
       "id" :  10,
-      "device_type" : "tablet",
+      "deviceType" : "Tablet",
       "name" :  "Lenovo Tab P11",
       "release_year" : 2020,
       "manufacturer" : "Lenovo",
@@ -91,7 +91,7 @@
     },
     {
       "id" :  11,
-      "device_type" : "Gaming dektop pc",
+      "deviceType" : "Gaming Desktop PC",
       "name" :  "Lenovo Legion T5 Tower",
       "release_year" : 2020,
       "manufacturer" : "Lenovo",
@@ -100,7 +100,7 @@
     },
     {
       "id" :  12,
-      "device_type" : "gaming laptop",
+      "deviceType" : "Gaming Laptop",
       "name" :  "Legion 5 15”",
       "release_year" : 2020,
       "manufacturer" : "Lenovo",

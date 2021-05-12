@@ -1,20 +1,26 @@
 <h3>Result</h3>
-
+<p>Here are the calculated emissions given in kgCO2 during the time interval that you chose.</p>
+<p>
+  We would like to note again that this is a lower bound and can therefore vary a lot from the actual value.
+</p>
 <div class="row">
   <div class="col s12">
     <div class="card grey lighten-1">
       <div class="card-content white-text">
-        <span class="card-title">Your total carbon footprint (in kgCO2):</span>
+        <span class="card-title">Total calculated footprint:</span>
         <p>{{ footprint | number }} kgCO2</p>
       </div>
       <hr>
       <div class="card-content white-text">
-        <span class="card-title">Your Zoom Carbon footprint (in kgCO2):</span>
-        <p>{{ zoomFprint | number}} kgCO2</p>
+        <span class="card-title">Zoom Carbon footprint:</span>
+        <p>{{ zoomFprint | number }} kgCO2</p>
       </div>
       <div class="card-content white-text">
-        <span class="card-title">Your Zoom Computer Emissions (in kgCO2):</span>
-        <p>{{ cDataFprint | number }} kgCO2</p>
+        <span class="card-title">Total Device Emissions:</span>
+        <p>{{ (footprint - zoomFprint) | number }} kgCO2</p>
+        <br>
+        <span class="card-title">Individual Device Emissions:</span>
+        <p *ngFor="let dev of selectedDevices"><b>{{ dev.name }}:</b> {{ dev.emissions | number }} kgCO2 </p>
       </div>
     </div>
   </div>
