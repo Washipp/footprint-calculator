@@ -13,16 +13,18 @@ export class ResultComponent implements OnInit {
   zoomData: ZoomData;
   zoomFprint: number;
   cData: CEmissionData;
-  cDataFprint: number;
   selectedDevices: Array<Device> = [];
+  numberOfQueries: number;
+  queriesEmissions: number;
 
   constructor(private cService: CalculatorService) { }
 
   ngOnInit(): void {
     this.loadData();
     this.zoomFprint = this.cService.calculateZoomFootprint(this.zoomData);
-    this.cDataFprint = this.cService.calculateComputerEmissions(this.cData);
+
     this.footprint = 0;
+    // Loop to sum up total device emissions
     for (const dev of this.selectedDevices) {
       const cData = this.cService.createEmptyCEmissionData();
       cData.lifeTimeEmission = dev.lifeTimeEmission;
@@ -32,7 +34,10 @@ export class ResultComponent implements OnInit {
       dev.emissions = e;
       this.footprint += e;
     }
+
     this.footprint += this.zoomFprint;
+    this.queriesEmissions = this.cService.calculateQueriesEmissions(this.numberOfQueries);
+    this.footprint += this.queriesEmissions;
   }
 
   loadData(): void {
@@ -50,6 +55,8 @@ export class ResultComponent implements OnInit {
 
     const jsonData = localStorage.getItem('selectedDevices');
     this.selectedDevices =  JSON.parse(jsonData);
+
+    this.numberOfQueries = Number(localStorage.getItem('numberOfQueries'));
   }
 
   resetAll(): void {

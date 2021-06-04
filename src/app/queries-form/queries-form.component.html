@@ -1,0 +1,27 @@
+<h3>Google Queries Emissions</h3>
+<div class="row">
+  <p>Try to give a rough estimate on how many Google Queries you have done during the time period used in the steps before.
+    As a reference, an average user makes 3-4 queries on a daily basis, according to Google.
+  </p>
+  <form class="col s12">
+    <span class="input-field-text">Number of Google Queries</span>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="hours_on_zoom_listening" name="hours_on_zoom" type="number" class="validate" min="0" [(ngModel)]="numberOfQueries" (focusout)="save()">
+      </div>
+    </div>
+  </form>
+</div>
+
+<hr>
+<div class="row">
+  <div class="col s12">
+    <a [routerLink]="['/computer_emissions']" (click)="save()"><button class="btn grey darken-2" style="margin-right: 10px">Back</button></a>
+    <a [routerLink]="['/result']" (click)="save()">
+      <button class="btn grey darken-2" style="margin-right: 10px">
+        Continue to Results
+      </button>
+    </a>
+    <button class="btn grey darken-2" (click)="reset()">Reset Values</button>
+  </div>
+</div>

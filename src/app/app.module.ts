@@ -8,13 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { ZoomFormComponent } from './zoom-form/zoom-form.component';
 import { ComputerEmissionsFormComponent } from './computer-emissions-form/computer-emissions-form.component';
 import { ResultComponent } from './result/result.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { QueriesFormComponent } from './queries-form/queries-form.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'zoom', component: ZoomFormComponent },
   { path: 'computer_emissions', component: ComputerEmissionsFormComponent },
-  { path: 'result', component: ResultComponent},
+  { path: 'result', component: ResultComponent },
+  { path: 'queries', component: QueriesFormComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ZoomFormComponent,
     ComputerEmissionsFormComponent,
-    ResultComponent
+    ResultComponent,
+    QueriesFormComponent
   ],
     imports: [
         BrowserModule,

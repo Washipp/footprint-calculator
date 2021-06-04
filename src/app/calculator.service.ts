@@ -75,6 +75,14 @@ export class CalculatorService {
   }
 
   /**
+   * Calculates the emissions done by google search queries.
+   * @param numberOfQueries number of queries done. Provided by user.
+   */
+  calculateQueriesEmissions(numberOfQueries: number): number {
+    return isNaN(numberOfQueries) ? 0 : ((numberOfQueries * 0.37) / 1000);
+  }
+
+  /**
    * Helper function that calculates how much kWh (kilowatt hours) per GB are used during 1 hour.
    * @param bandwidth Provided bandwidth in kbps.
    */

@@ -7,12 +7,12 @@
   <div class="col s12">
     <div class="card grey lighten-1">
       <div class="card-content white-text">
-        <span class="card-title">Total calculated footprint:</span>
+        <span class="card-title">Total calculated emissions:</span>
         <p>{{ footprint | number }} kgCO2</p>
       </div>
       <hr>
       <div class="card-content white-text">
-        <span class="card-title">Zoom Carbon footprint:</span>
+        <span class="card-title">Zoom Emissions:</span>
         <p>{{ zoomFprint | number }} kgCO2</p>
       </div>
       <div class="card-content white-text">
@@ -22,13 +22,17 @@
         <span class="card-title">Individual Device Emissions:</span>
         <p *ngFor="let dev of selectedDevices"><b>{{ dev.name }}:</b> {{ dev.emissions | number }} kgCO2 </p>
       </div>
+      <div class="card-content white-text">
+        <span class="card-title">Queries Emissions:</span>
+        <p>{{ queriesEmissions | number }} kgCO2</p>
+      </div>
     </div>
   </div>
 </div>
 <hr>
 <div class="row">
   <div class="col s12">
-    <a [routerLink]="['/computer_emissions']">
+    <a [routerLink]="['/queries']">
       <button class="btn grey darken-2" style="margin-right: 10px">
         Back
       </button>
